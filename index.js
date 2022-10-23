@@ -141,6 +141,7 @@ function retornaStringObjeto(obj) {
     return strObj
 }
 
+/*
 function retornaObjetoPorNomeTitulo(arrayObj, nomeTitulo) {
     const retorno = []
 
@@ -156,5 +157,7 @@ function retornaObjetoPorNomeTitulo(arrayObj, nomeTitulo) {
 
     return retorno;
 }
+
+*/
 
 console.log("acomodacoes com o nome Quarto Bronze: ", retornaObjetoPorNomeTitulo(hospedagens, "Quart1o Bronze"))
