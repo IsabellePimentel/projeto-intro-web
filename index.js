@@ -5,28 +5,32 @@ const hospedagem = {
     suite: "Quarto Bronze",
     diaria: 500.00,
     confirmacaoImediata: true,
-    acomodacoes: ["cama casal", "ar condicionado", "banheiro privativo", "tv."]
+    imagem: "foto4.jpg",
+    acomodacoes: ["Cama casal", "Ar condicionado", "Banheiro privativo", "Tv"]
 }
 
 const hospedagem1 = {
     suite: "Quarto Prata",
     diaria: 650.00,
+    imagem: "foto3.jpg",
     confirmacaoImediata: true,
-    acomodacoes: ["cama casal", "ar condicionado", "banheiro privativo", "tv", "frigobar", "secador."]
+    acomodacoes: ["Cama casal", "Ar condicionado", "Banheiro privativo", "Tv", "Frigobar", "Secador"]
 }
 
 const hospedagem2 = {
     suite: "Quarto Ouro",
     diaria: 750.00,
+    imagem: "foto1.jpg",
     confirmacaoImediata: false,
-    acomodacoes: ["cama casal extragrande", "ar condiconado", "banheiro privativo", "tv", "frigobar", "secador", "varanda com vista", "armario."]
+    acomodacoes: ["Cama casal extragrande", "Ar condiconado", "Banheiro privativo", "Tv", "Frigobar", "Secador", "Varanda com vista"]
 }
 
 const hospedagem3 = {
     suite: "Quarto Diamante",
     diaria: 900.00,
+    imagem: "foto2.jpg",
     confirmacaoImediata: false,
-    acomodacoes: ["cama casal extragrande", "ar condiconado", "banheiro privativo", "tv", "frigobar", "secador", "varanda com vista", "armario", "banheira de hidromassagem", "lareira."]
+    acomodacoes: ["Cama casal extragrande", "Ar condiconado", "Banheiro privativo", "Tv", "Frigobar", "Secador", "Varanda com vista", "Banheira de hidromassagem", "Lareira"]
 }
 
 console.log((hospedagem.diaria + hospedagem1.diaria + hospedagem2.diaria + hospedagem3.diaria) / 4)
@@ -94,31 +98,35 @@ Acomodações: ${strAcomodacoes3}
 //console.log(suites)
 
 const hospedagens = []
+hospedagens.push(hospedagem)
+hospedagens.push(hospedagem1)
+hospedagens.push(hospedagem2)
+hospedagens.push(hospedagem3)
 // 0
 
-if (hospedagem.confirmacaoImediata === true) {
-    hospedagens.push(hospedagem)
-} else {
-   // alert('Item não foi adicionado')
-}
-// 1
-if (hospedagem1.confirmacaoImediata === true) {
-    hospedagens.push(hospedagem1)
-} else {
-   // alert("Item não foi adicionado")
-}
-// 2
-if (hospedagem2.confirmacaoImediata === true) {
-    hospedagens.push(hospedagem2)
-} else {
-   // alert("Item não foi adicionado")
-}
-// 3
-if (hospedagem3.confirmacaoImediata === true) {
-    hospedagens.push(hospedagem3)
-} else {
-   // alert("Item não foi adicionado")
-}
+// if (hospedagem.confirmacaoImediata === true) {
+//     hospedagens.push(hospedagem)
+// } else {
+//    // alert('Item não foi adicionado')
+// }
+// // 1
+// if (hospedagem1.confirmacaoImediata === true) {
+//     hospedagens.push(hospedagem1)
+// } else {
+//    // alert("Item não foi adicionado")
+// }
+// // 2
+// if (hospedagem2.confirmacaoImediata === true) {
+//     hospedagens.push(hospedagem2)
+// } else {
+//    // alert("Item não foi adicionado")
+// }
+// // 3
+// if (hospedagem3.confirmacaoImediata === true) {
+//     hospedagens.push(hospedagem3)
+// } else {
+//    // alert("Item não foi adicionado")
+// }
 
 console.log(hospedagens)
 
@@ -133,20 +141,20 @@ for (i = 0; i < hospedagens.length; i++) {
 }
 
 function retornaStringObjeto(obj) {
-    const strObj = `SUITE: ${obj.suite.toUpperCase()}
-        Diaria: ${obj.diaria}
-        Confirmação Imediata: ${obj.confirmacaoImediata}
+    const strObj = `<h4>${obj.suite.toUpperCase()} </h4>
+        Diaria: ${obj.diaria} <br>
+        Confirmação Imediata: ${obj.confirmacaoImediata == true ? "Sim" : "Não"} <br>
         Acomodações: ${obj.acomodacoes}`
 
     return strObj
 }
 
-/*
+
 function retornaObjetoPorNomeTitulo(arrayObj, nomeTitulo) {
     const retorno = []
 
     for (const obj of arrayObj) {
-        if(obj.suite === nomeTitulo) {
+        if(obj.suite.toUpperCase().startsWith(nomeTitulo.toUpperCase())) {
             retorno.push(obj)
         }
     }
@@ -158,6 +166,39 @@ function retornaObjetoPorNomeTitulo(arrayObj, nomeTitulo) {
     return retorno;
 }
 
-*/
 
-console.log("acomodacoes com o nome Quarto Bronze: ", retornaObjetoPorNomeTitulo(hospedagens, "Quart1o Bronze"))
+
+//console.log("acomodacoes com o nome Quarto Bronze: ", retornaObjetoPorNomeTitulo(hospedagens, "Quart1o Bronze"))
+
+function pesquisarItem(event){
+
+    let container = document.getElementById("container")
+    container.innerHTML = ""
+
+    var nomeHotel = document.getElementById("Nome").value;
+
+    const items = retornaObjetoPorNomeTitulo(hospedagens, nomeHotel)
+
+    for (let index = 0; index < items.length; index++) {
+        const element = items[index];
+
+        let elementoNovo = document.createElement("section")
+        elementoNovo.classList.add("card")
+
+        let elementoImg = document.createElement("img")
+        elementoImg.classList.add("img-card")
+        elementoImg.src = "img/" + element.imagem
+        
+        let referencia = document.getElementById("container")
+        referencia.insertAdjacentElement("beforeend",elementoNovo)
+        
+        elementoNovo.insertAdjacentElement("beforeend",elementoImg)
+
+        let elementoDiv = document.createElement("div")
+        elementoDiv.classList.add("divTxt")
+        elementoDiv.innerHTML = retornaStringObjeto(element)
+
+        elementoImg.insertAdjacentElement("afterend",elementoDiv)
+    }
+    
+}

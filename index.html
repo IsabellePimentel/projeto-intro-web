@@ -20,27 +20,28 @@
 
         <div class="div1">
             <form action="#">
-                <label for="Nome">Consultar Reserva</label>
+                <label for="Nome">Pesquisar</label>
                 <input type="text" id="Nome">
-                <button type="submit">Enviar</button>
+                <button type="submit" onclick="pesquisarItem(event)">Enviar</button>
             </form>
         </div>
 
 
 
-        <div class="div2">
+        <div class="div2" id="container">
 
-            <section class="card" id="hospedagem">
+             <section class="card" id="hospedagem">
                 <img class="img-card"
                     src="img/foto4.jpg"
                     alt="Imagem de capa do card">
 
-                <h4>Quarto Bronze</h4>
-                <ul>
-                    <li>Diaria: 500.00</li>
-                    <li>Confirmação Imediata: Sim</li>
-                    <li>Acomodações: Cama casal, Ar condicionado, Banheiro privativo, Tv</li>
-                </ul>
+                    <div class="divTxt">
+                        <h4>QUARTO BRONZE</h4>
+                        Diaria: 500 <br>
+                        Confirmação Imediata: Sim <br>
+                        Acomodações: Cama casal,Ar condicionado,Banheiro privativo,Tv
+                    </div>
+              
             </section>
 
             <section class="card" id="hospedagem1">
@@ -48,13 +49,12 @@
                     src="img/foto3.jpg"
                     alt="Imagem de capa do card">
 
-
-                <h4>Quarto Prata</h4>
-                <ul>
-                    <li>Diaria: 650.00</li>
-                    <li>Confirmação Imediata: Sim</li>
-                    <li>:Cama casal,Ar condicionado, Banheiro privativo, Tv, Frigobar, Secador</li>
-                </ul>
+                    <div class="divTxt">
+                        <h4>QUARTO PRATA</h4>
+                        Diaria: 650 <br>
+                        Confirmação Imediata: Sim <br>
+                        Acomodações: Cama casal,Ar condicionado,Banheiro privativo,Tv,Frigobar,Secador
+                    </div>
             </section>
 
             <section class="card" id="hospedagem2">
@@ -62,14 +62,12 @@
                 src="img/foto1.jpg"
                 alt="Imagem de capa do card">
 
-
-                <h4>Quarto Ouro</h4>
-                <ul>
-                    <li>Diaria: 750.00</li>
-                    <li>Confirmação Imediata: Não</li>
-                    <li>Acomodações:Cama casal extragrande, Ar condiconado, Banheiro privativo, Tv, Frigobar, Secador,
-                        Varanda com vista, Armario.</li>
-                </ul>
+                <div class="divTxt">
+                    <h4>QUARTO OURO</h4>
+                    Diaria: 750 <br>
+                    Confirmação Imediata: Não <br>
+                    Acomodações: Cama casal extragrande,Ar condiconado,Banheiro privativo,Tv,Frigobar,Secador,Varanda com vista
+                </div>
             </section>
 
             <section class="card" id="hospedagem3">
@@ -77,14 +75,13 @@
                     src="img/foto2.jpg"
                     alt="Imagem de capa do card">
 
-                <h4>Quarto Diamante</h4>
-                <ul>
-                    <li>Diaria: 900.00</li>
-                    <li>Confirmação Imediata: false</li>
-                    <li>Acomodações:Cama casal extragrande, Ar condiconado, Banheiro privativo, Tv, Frigobar, Secador,
-                        Varanda com vista, Armario, Banheira de hidromassagem, Lareira.</li>
-                </ul>
-            </section>
+                    <div class="divTxt">
+                        <h4>QUARTO DIAMANTE</h4>
+                        Diaria: 900 <br>
+                        Confirmação Imediata: Não <br>
+                        Acomodações: Cama casal extragrande,Ar condiconado,Banheiro privativo,Tv,Frigobar,Secador,Varanda com vista,Banheira de hidromassagem,Lareira
+                    </div>
+            </section> 
 
 
 
