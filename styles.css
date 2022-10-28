@@ -12,12 +12,14 @@ body{
 }
 
 header {
+    display: grid;
     height: 15vh;
     border: 1px solid white;
     background-color:rgb(45, 12, 176);
 }
 
 footer {
+    display: grid;
     height: 9vh;
     border-top: 1px solid white;
 }
@@ -44,6 +46,7 @@ ul {
 }
 
 .div1 {
+    display: grid;
     margin-top: 2vh;
 }
 

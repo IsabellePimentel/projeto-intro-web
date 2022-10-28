@@ -33,8 +33,10 @@ const hospedagem3 = {
     acomodacoes: ["Cama casal extragrande", "Ar condiconado", "Banheiro privativo", "Tv", "Frigobar", "Secador", "Varanda com vista", "Banheira de hidromassagem", "Lareira"]
 }
 
-console.log((hospedagem.diaria + hospedagem1.diaria + hospedagem2.diaria + hospedagem3.diaria) / 4)
-const mediaItens = 700.00
+
+const mediaItens = (hospedagem.diaria + hospedagem1.diaria + hospedagem2.diaria + hospedagem3.diaria) / 4
+console.log("Media dos valores das hospedagens= " + mediaItens)
+
 
 const confirmacaoImediatas = hospedagem.confirmacaoImediata && hospedagem1.confirmacaoImediata && hospedagem2.confirmacaoImediata && hospedagem3.confirmacaoImediata
 console.log(confirmacaoImediatas)
@@ -102,7 +104,7 @@ hospedagens.push(hospedagem)
 hospedagens.push(hospedagem1)
 hospedagens.push(hospedagem2)
 hospedagens.push(hospedagem3)
-// 0
+
 
 // if (hospedagem.confirmacaoImediata === true) {
 //     hospedagens.push(hospedagem)
@@ -141,10 +143,10 @@ for (i = 0; i < hospedagens.length; i++) {
 }
 
 function retornaStringObjeto(obj) {
-    const strObj = `<h4>${obj.suite.toUpperCase()} </h4>
-        Diaria: ${obj.diaria} <br>
-        Confirmação Imediata: ${obj.confirmacaoImediata == true ? "Sim" : "Não"} <br>
-        Acomodações: ${obj.acomodacoes}`
+    const strObj = `<ul><li><h4><a href="http://www.pousadadoschas.com.br/blog/5-diferenciais-de-se-hospedar-em-pousada-que-voce-precisa-saber/" target="_blank">${obj.suite.toUpperCase()} </a></h4></li>
+    <li>Diaria: ${obj.diaria} </li>
+    <li>Confirmação Imediata: ${obj.confirmacaoImediata == true ? "Sim" : "Não"} </li>
+    <li>Acomodações: ${obj.acomodacoes}</li></ul>`
 
     return strObj
 }
@@ -201,4 +203,8 @@ function pesquisarItem(event){
         elementoImg.insertAdjacentElement("afterend",elementoDiv)
     }
     
+}
+
+window.onload = function carregaPaginaInicial() {
+    pesquisarItem()
 }
