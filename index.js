@@ -143,7 +143,7 @@ for (i = 0; i < hospedagens.length; i++) {
 }
 
 function retornaStringObjeto(obj) {
-    const strObj = `<ul><li><h4><a href="http://www.pousadadoschas.com.br/blog/5-diferenciais-de-se-hospedar-em-pousada-que-voce-precisa-saber/" target="_blank">${obj.suite.toUpperCase()} </a></h4></li>
+    const strObj = `<ul><li><h4><a href="https://aquiacontece.com.br/noticia/brasil-mundo/16/03/2020/as-vantagens-de-se-hospedar-em-pousadas/151157" target="_blank">${obj.suite.toUpperCase()} </a></h4></li>
     <li>Diaria: ${obj.diaria} </li>
     <li>Confirmação Imediata: ${obj.confirmacaoImediata == true ? "Sim" : "Não"} </li>
     <li>Acomodações: ${obj.acomodacoes}</li></ul>`
